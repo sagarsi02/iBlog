@@ -1,0 +1,24 @@
+{
+  "params":
+  {
+    "local_server": "True",
+    "local_uri": "mysql://root:@localhost/zbn",
+    "prod_uri": "mysql://root:@localhost/zbn",
+    "fb_url": "https://facebook.com/zeebiharnews",
+    "tw_url": "https://twitter.com/sagarsi02",
+    "gh_url": "https://instagram.com/technicalfirst",
+    "blog_name": "Zee Bihar News",
+    "blog_tag": "Here will you read all the letest news",
+    "gmail_user": "sagarsi0202@gmail.com",
+    "gmail_password": "sagarsi786",
+    "about_text": "Hey my name is sagar singh. This is a test text. you can change this text from json file.",
+    "no_of_post": 3,
+    "login_image": "zbn.png",
+    "admin_username": "sagarsi02",
+    "admin_password": "sagarsi@786",
+    "upload_location": "C:\\Users\\LENOVO\\PycharmProjects\\iBlog\\static"
+
+  }
+
+
+}
