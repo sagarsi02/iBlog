@@ -7,7 +7,6 @@ import os
 import math
 from datetime import datetime
 
-
 with open('config.json', 'r') as c:
     params = json.load(c)["params"]
 
@@ -18,13 +17,14 @@ app.config['UPLOAD_FOLDER'] = params['upload_location']
 
 #contact sms from Mail=================================================================================================
 
-app.config.update(
-    MAIL_SERVER = 'smtp.gmail.com',
-    MAIL_PORT = '465',
-    MAIL_USE_SSL = 'True',
-    MAIL_USERNAME = params['gmail_user'],
-    MAIL_PASSWORD = params['gmail_password']
-)
+# app.config.update(
+#     MAIL_SERVER = 'smtp.gmail.com',
+#     MAIL_PORT = '465',
+#     MAIL_USE_SSL = 'True',
+#     MAIL_USERNAME = params['gmail_user'],
+#     MAIL_PASSWORD = params['gmail_password']
+# )
+app.config.update(**params["mail_config"])
 mail = Mail(app)
 if(local_server):
     app.config['SQLALCHEMY_DATABASE_URI'] = params['local_uri']
@@ -169,7 +169,7 @@ def uploader():
         if(request.method=='POST'):
             f= request.files['file1']
             f.save(os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(f.filename)))
-            return "Uploaded Sucessfully"
+            return redirect('/dashboard')
 
 
 
